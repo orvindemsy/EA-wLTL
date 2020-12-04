@@ -3,3 +3,6 @@
 /csp
 
 # Files
+dat.mat
+Sigma0.pkl
+Sigma1.pkl
