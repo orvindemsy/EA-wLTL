@@ -6,10 +6,10 @@ All results shown are still being developed
 ## Non-EA and EA EEG trials of one trial
 This is a comparison of non-aligned vs aligned EEG trials from a single trial of all electrodes 
 
-![result]("./result.png")
+![result](./result.png)
 
 ## Visualization of non-alinged features vs aligned features using t-sne
-![result]("./nonEA_vs_EA.png")
+![result](./nonEA_vs_EA.png)
   
 *Not the expected result, the result for EA for target subject (red dot) is expected to more scattered*
 
@@ -20,7 +20,7 @@ Comparison of four difference model they are:
 3. Weighted Logistic Transfer Learning (wLTL)
 4. Weighted Logistic Transfer Learning + EA (wLTL + EA)
 
-![SNE_plot]("SNE_plot.png")
+![SNE_plot](SNE_plot.png)
 
 Classification of left and right hand imagery task.
 Each model is trained only with 10 trials of each subject (5 samples of each class right and left hand).
