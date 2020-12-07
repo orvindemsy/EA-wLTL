@@ -6,10 +6,10 @@ All results shown are still being developed
 ## Non-EA and EA EEG trials of one trial
 This is a comparison of non-aligned vs aligned EEG trials from a single trial of all electrodes 
 
-![SNE_plot](./SNE_plot.png)
+![nonEA_vs_EA](./nonEA_vs_EA.png)
 
 ## Visualization of non-alinged features vs aligned features using t-sne
-![result](./nonEA_vs_EA.png)
+![SNE_plot](./SNE_plot.png)
   
 *Not the expected result, the result for EA for target subject (red dot) is expected to more scattered*
 
