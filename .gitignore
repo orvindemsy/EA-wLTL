@@ -1,5 +1,6 @@
 # Folders
 .ipynb_checkpoints
+__pycache__
 
 # Files
 *.mat

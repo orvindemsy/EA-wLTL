@@ -81,5 +81,5 @@ def apply_EA(data, key_list):
             all_trials_EA.append(R_inv@t)
         
         # Return all_trials_EA
-        return all_trials_EA
+        return np.array(all_trials_EA)
         
