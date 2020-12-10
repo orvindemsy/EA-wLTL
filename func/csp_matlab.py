@@ -61,3 +61,56 @@ def csp_feat_ver5(XtrainRaw, XtestRaw, ytr, n_filter=3):
         feat_test.append(np.log10(np.diag(X@X.T)/np.trace(X@X.T)) ) 
     
     return np.array(feat_train), np.array(feat_test)
+
+
+
+def csp_feat_ver3(data, n_filter=3, key='all_trials'):
+    '''
+    Adaptation of MATLAB csp code in python, the original work is called TLBCI 
+    This function is used to convert all trials into csp feature,
+    Thus, there isn't splitting into train and test set in this function
+    
+    Parameter:
+    data: dictionary containing data of each subject EEG signal, y class
+    '''
+    
+    y = data['y']
+    ids_left = np.argwhere(y == 0).ravel()
+    ids_right = np.argwhere(y == 1).ravel()
+
+    EEG_all = data[key]
+    EEG_left = EEG_all[ids_left]
+    EEG_right = EEG_all[ids_right]
+
+    # Covariance of left and right
+    cov_left = 0
+    for signal in EEG_left:
+        cov_left += np.cov(signal, rowvar=True, ddof=1)
+
+    cov_left = cov_left/EEG_left.shape[0]
+
+    cov_right = 0
+    for signal in EEG_right:
+        cov_right += np.cov(signal, rowvar=True, ddof=1)
+
+    cov_right = cov_right/EEG_right.shape[0]
+
+    mldiv = la.lstsq(cov_right, cov_left, rcond=None)[0]
+
+    # Eigenvector and eigenvalues
+    [eigval, eigvec] = la.eig(mldiv)
+
+    # Sort, descending order, eigvec
+    ids_dsc = np.argsort(eigval)[::-1]
+    eigvec = eigvec[:, ids_dsc]
+
+    # W matrix
+    W = np.delete(eigvec, np.s_[n_filter:-n_filter], axis=1)
+
+    # Calculating feature train 
+    all_feat = []
+    for trial in EEG_all:
+        X = W.T@trial
+        all_feat.append(np.log10(np.diag(X@X.T)/np.trace(X@X.T)) ) 
+
+    return np.array(all_feat)
