@@ -107,7 +107,7 @@ def split_EEG_one_class(EEG_one_class, percent_train=0.8):
     return EEG_train, EEG_test
 
 
-def process_s_data(data, eeg_key='EEG filtered', start_t=0.5, end_t=3.5, fs=250):
+def process_s_data(data, eeg_key='EEG_filtered', start_t=0.5, end_t=3.5, fs=250):
     '''
     Parameter
     data:
