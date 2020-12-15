@@ -16,16 +16,16 @@ def fir_bandpass(numtaps, low, high, fs):
 def apply_bandpass(raw_EEG, b):
     '''
     INPUT:
-    raw_EEG : EEG data in the shape of S x N
+    raw_EEG : EEG data in the shape of N x S
     b : coefficient of band-pass filter
     
     OUTPUT:
-    EEG_filtered : filtered EEG data shape S x N
+    EEG_filtered : filtered EEG data shape N x S
     
     N : number of channel
     S : number of sample
     '''
-    raw_EEG = lfilter(b, 1, raw_EEG, axis=0)
+    raw_EEG = lfilter(b, 1, raw_EEG, axis=-1)
     
     return raw_EEG
 
@@ -114,7 +114,7 @@ def process_s_data(data, eeg_key='EEG_filtered', start_t=0.5, end_t=3.5, fs=250)
     Dictionary of data of one subject
     
     key:
-    This will be the key in the data, in which EEG data is being stored, shape of samples x n_electrodes
+    This will be the key in the data, in which EEG data is being stored, shape of (samples x n_electrodes)
     The data inside this key will be splitted into no_trials x n_electrodes x samples
     
 
@@ -128,6 +128,10 @@ def process_s_data(data, eeg_key='EEG_filtered', start_t=0.5, end_t=3.5, fs=250)
     all_pos:
     starting point of each trials
     '''
+    # Transpose the data inside data[eeg_key] if it is not in shape of samples x n_electrode
+    if data[eeg_key].shape[0] < data[eeg_key].shape[1]:
+        data[eeg_key] = data[eeg_key].T
+    
     # Event type and position of subject
     typ = data['etyp']
     pos = data['epos']
