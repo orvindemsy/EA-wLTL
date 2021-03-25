@@ -24,9 +24,7 @@ This section compares effects of doing EA (Euclidean Alignment) using LDA and SV
 2. Using non-EA source trials to train target will worsen accuracy
 3. using EA source trials to train target will improve accuracy
 
-
 ### Evaluation scheme
-
 ![evaluation_scheme](/img/evaluation_scheme_4pat.png)
 
 ### Result
@@ -35,8 +33,6 @@ This section compares effects of doing EA (Euclidean Alignment) using LDA and SV
 Conclusion:
 1. Objective 1 is proofed by comparing pattern 1 and 2, the difference between the two is negligible, on either classifier.
 2. Objective 2 and 3 can be observe by comparing pattern 3 and pattern 4
-
-
 
 ## Comparing 6 Approaches
 Comparison of six different approaches they are:
@@ -50,14 +46,14 @@ Comparison of six different approaches they are:
 
 ![10_20_barplot](/img/[10_20]_barplot.png)
 ![30_40_barplot](/img/[30_40]_barplot.png)
- 
-One significant result happened on subject 8 where wLTL perform better than the rest of other methods, this agrees with the study on [3] that wLTL is more pronounced on subject with poor performance.
+
+Classification of left and right hand imagery task.
+Different number of target training trials from 10 trials (5 each class) to 40 trials are used to observe the effect it has on accuracy on different approaches.
 
 ## Number of Source Data vs Accuracy
 ![lineplot](/img/lineplot.png)
 
-Classification of left and right hand imagery task.
-Different number of target training trials from 20 trials (10 each class) until 40 trials are used to observe the effect it has on accuracy.
+One significant result happened on subject 8 where wLTL perform better than the rest of other approaches, this agrees with the study on [3] that wLTL is more pronounced on subject with poor performance.
 
 ## Reference
 1. He, H., & Wu, D. (2020). Transfer Learning for Brain-Computer Interfaces: A Euclidean Space Data Alignment Approach. IEEE Transactions on Biomedical Engineering, 67(2), 399–410. https://doi.org/10.1109/TBME.2019.2913914
