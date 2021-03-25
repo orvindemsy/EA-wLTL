@@ -4,12 +4,13 @@ Experimenting combining Euclidean Alignment (EA) and weighted LTL to classify MI
 All results shown are still being developed
 
 ## Non-EA and EA EEG trials of one trial
-Updated on 15th December, 2020:
+Updated on 25th March, 2021:
 - Preprocessed data
 - Comparing 6 approaches
 
-This is a comparison of non-aligned vs aligned EEG trials from a single trial of all electrodes 
-![nonEA_vs_EA](/img/nonEA_vs_EA.png)
+This is a comparison of non-aligned (black) vs aligned (red) EEG trials from a single trial of all electrodes  
+  
+![](/img/nonEA_vs_EA.png)
 
 ## Visualization of non-alinged features vs aligned features using t-sne
 ![SNE_plot](/img/SNE_plot.png)
@@ -49,7 +50,11 @@ Comparison of six different approaches they are:
 
 ![10_20_barplot](/img/[10_20]_barplot.png)
 ![30_40_barplot](/img/[30_40]_barplot.png)
+ 
+One significant result happened on subject 8 where wLTL perform better than the rest of other methods, this agrees with the study on [3] that wLTL is more pronounced on subject with poor performance.
 
+## Number of Source Data vs Accuracy
+![lineplot](/img/lineplot.png)
 
 Classification of left and right hand imagery task.
 Different number of target training trials from 20 trials (10 each class) until 40 trials are used to observe the effect it has on accuracy.
@@ -58,5 +63,3 @@ Different number of target training trials from 20 trials (10 each class) until 
 1. He, H., & Wu, D. (2020). Transfer Learning for Brain-Computer Interfaces: A Euclidean Space Data Alignment Approach. IEEE Transactions on Biomedical Engineering, 67(2), 399–410. https://doi.org/10.1109/TBME.2019.2913914
 2. Wu, D., Peng, R., Huang, J., & Zeng, Z. (2020). Transfer Learning for Brain-Computer Interfaces: A Complete Pipeline. 1–9. http://arxiv.org/abs/2007.03746
 3. Azab, A. M., Mihaylova, L., Ang, K. K., & Arvaneh, M. (2019). Weighted Transfer Learning for Improving Motor Imagery-Based Brain-Computer Interface. IEEE Transactions on Neural Systems and Rehabilitation Engineering, 27(7), 1352–1359. https://doi.org/10.1109/TNSRE.2019.2923315
-
-
