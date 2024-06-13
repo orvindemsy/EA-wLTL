@@ -1,5 +1,7 @@
 # EA-wLTL (Work in Progress)
 **update 202406 life gets wild, cant code no more, ive tried.**
+
+
 Experimenting combining Euclidean Alignment (EA) and weighted LTL to classify MI-based EEG 
 
 All results shown are still being developed
